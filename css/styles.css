@@ -1,0 +1,113 @@
+/*usamo esta llada para que funcione @use el "as" es para darle un nombre a esa importacion y poder usarla.
+si ponemos un nombre como v1 usaremos v1.variableDeSASS  y si ponemos un * estonces solo llamamos a la variable sin prefijo
+ej deuso de prefijo
+@use '../config/variables' as v1;
+body{
+   background-color: v1.$violet; 
+}*/
+body {
+  display: grid;
+  font-size: 13px;
+  padding: 1rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: #cfcfcf;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    place-items: center;
+  }
+}
+
+body,
+blockquote, h2, p {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+}
+@media screen and (min-width: 1024px) {
+  .main {
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 310px);
+  }
+}
+
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .card--is-daniel {
+    grid-column: 1/3;
+    grid-row: 1/1;
+  }
+  .card--is-patrick {
+    grid-column: 2/4;
+  }
+  .card--is-kira {
+    grid-column: 4/5;
+    grid-row: 1/-1;
+  }
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.card__title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.card__description {
+  color: var(--description-color, #48556a);
+}
+.card__description--is-ligth {
+  --description-color:#ffffffaa;
+}
+.card--violet {
+  background-color: #7541c8;
+  background-image: url("../asset/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+.card--violet, .card--is-grayish-blue, .card--very-dark-blue {
+  color: white;
+}
+.card____description {
+  color: var(--coment-color, #48556a);
+}
+.card____description--is-ligth {
+  --coment-color:#ffffffaa;
+}
+.card--is-grayish-blue {
+  background-color: #48556a;
+}
+.card--very-dark-blue {
+  background-color: #19212e;
+}
+
+.user__autor {
+  margin-left: 1rem;
+}
+.user__name {
+  color: var(--author-color, #19212e);
+}
+.user__work {
+  color: var(--work-author, #cfcfcf);
+}
+.user__image {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  background-color: #cfcfcf;
+}
+.user--is-ligth {
+  --author-color:$white;
+  --work-author:#ffffffaa;
+}
